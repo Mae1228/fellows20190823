@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+        }
+        #div1::after{
+            content: '';
+            width:0;
+            border:10px solid transparent;
+            border-top-color:#ccc;
+        }
+        #div1::selection{
+            color:yellow;
+            background: #ff0000;
+        }
+        #div1::first-line{
+            color: #0f0;
+        }
+        #div1::first-letter{
+            color: #795da3;
+        }
+        input::placeholder{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <span>烦恼是开发商梵净山佛教爱上了</span>
+    </div>
+    <input type="text" placeholder="aaa">
+    fff
+</body>
+</html>
