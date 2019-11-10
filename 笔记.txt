@@ -3,10 +3,31 @@ css - 页面的样式
 javascript - 页面的交互
 document - 文档
 charset - 字符集
-行级元素 - a span img -- 水平排布，靠内容撑开,不能设置宽高
-块级元素 - p h1~h6 table div ul ol li --垂直分布，宽充满整个父元素，能设置宽和高
+行级元素 - a span img i after button input b -- 水平排布，靠内容撑开,不能设置宽高
+块级元素 - p h1~h6 table div ul ol li form table --垂直分布，宽充满整个父元素，能设置宽和高
                                         如果不设置高，高就是内容撑开的
 display - 块级元素可以变成行级元素，行级元素可以变成块级元素
 float - 内容撑开，如果没有设置宽高和没有内容，则没有显示
         可以设置宽高
+display float position -- 行级元素可以改成块级元素
+text-align:center -- 行级元素水平居中（设置在父元素上）
+line-height:行高 -- 块级元素水平居中（设置在父元素上）
+    水平和垂直居中 -- display: flex;/*弹性盒模型*/
+                      justify-content: center;/*居中*/
+                      align-items: center;/*居中*/
+不拖文档流，空间不释放
+定位有几种值 -- static：默认
+                absolute：相对于最近的已经定位的祖先元素，如果没有则相对于body相对于浏览器.
+                        空间释放，脱离文档流，就是其他元素可以占他原来的位置
+                relative：相对于自己的初始位置定位，空间不释放，不脱离文档流
+                fixed：相对于body相对于浏览器
+盒模型 -- 标准盒模型和怪异盒模型
+盒模型分为几部分 -- content padding border margin
+标准盒模型和怪异盒模型怎么转换 -- box-sizing:border-box content-box
+                                  border-box代表怪异盒模型
+                                  content-box代表标准盒模型
+元素塌陷问题 -- 子元素脱离文档流当值父元素高度为0
+                解决方案：知道高度，直接在他父元素加上高
+                          不知道高度时，overflow:hidden
+伪元素 -- 在元素的最后孩子插入行级元素
 
