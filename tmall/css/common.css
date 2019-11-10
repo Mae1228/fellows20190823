@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    font:12px/1.5 tahoma,arial,"\5b8b\4f53" ;
+}
+/*为了在整个屏幕居中*/
+.wrapper{
+    width: 1230px;
+    margin: 0 auto;
+}
+/*a标签去掉下划线*/
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+li{
+    list-style: none;
+}
