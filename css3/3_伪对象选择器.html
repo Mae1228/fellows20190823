@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪对象选择器</title>
+    <style>
+        ::selection{/*鼠标选择时变颜色*/
+            background: #ff0000;
+            color: #55a532;
+        }
+        ::first-line{/*第一行变颜色：块级元素中的第一个行元素，块级元素都是*/
+            color: blue;
+        }
+        ::first-letter{/*第一个字变颜色：块级元素中的第一个行元素，块级元素都是*/
+            color:deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <span>ssiiiiiiii</span>
+            <h2>rrrrrrrr</h2>
+            <span>ssssss</span>
+            <p>pppppppp</p>
+            <span>nnnnnnnnn</span>
+            <h1>gggggggggg</h1>
+        </div>
+        <p>
+            <span>span</span>
+        </p>
+
+    </div>
+        <div>
+            divdivdivd
+        </div>
+</body>
+</html>

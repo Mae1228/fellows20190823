@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择符</title>
+    <style>
+        /*a:link{!*未访问之前的颜色*!*/
+            /*color:red;*/
+        /*}*/
+        /*a:visited{!*访问之后的颜色*!*/
+            /*color:green;*/
+        /*}*/
+        /*a:hover{!*接触但是没有点击时的颜色*!*/
+            /*color:peru;*/
+        /*}*/
+        /*a:active{!*点击但是没有松手时的颜色*!*/
+            /*color:purple;*/
+        /*}*/
+        
+        /*input:focus{*/
+            /*color:yellow;*/
+            /*background: #f00;*/
+        /*}*/
+        
+        /*p:first-child{!*找到他父元素的第一个孩子，相反：last-child*!*/
+            /*color:red;*/
+        /*}*/
+        /*p:first-of-type{!*在父元素的第一个出现的元素，相反：last-of-type*!*/
+            /*color:blue;*/
+        /*}*/
+        /*p:only-child{!*在父元素的只有一个该元素且只有一个孩子*!*/
+            /*color: red;*/
+        /*}*/
+        /*p:only-of-type{!*在父元素的只有一个该元素但可以有多个孩子*!*/
+            /*color:red;*/
+        /*}*/
+        /*li:nth-child(2){*/
+            /*color:red;*/
+        /*}*/
+        /*li:nth-child(2n+1){*/
+            /*color:red;*/
+        /*}*/
+        /*ul :nth-child(3){!*ul 下面的第几个孩子，相反的是nth-last-child*!*/
+            /*color:green;*/
+        /*}*/
+        /*ul li:nth-child(4){!*ul 下面的第几个孩子,而且还是li才行*!*/
+            /*color: blue;*/
+        /*}*/
+        /*ul li:nth-of-type(4){!*ul 下面的第几个li孩子,相反：nth-last-of-type*!*/
+            /*color: blue;*/
+        /*}*/
+        
+        /*p:empty{*/
+            /*height: 100px;*/
+            /*background: #f00;*/
+        /*}*/
+        
+        input:checked{/*input中的radio和checkbox时*/
+            height: 20px;
+            width:20px;
+        }
+        :disabled{/*禁用，相反：enabled*/
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="xxx.html">
+            用户名：<input type="text" name="username">
+            密码：<input type="password">
+            性别：<input name="sex" type="radio" checked="checked">女
+            <input name='sex' type="radio">男<!--同名的就是一组的-->
+            爱好：<input type="checkbox">足球 <input type="checkbox">排球
+            <input type="checkbox">篮球
+            <input type="submit" value="申请"><!--提交-->
+            <input type="reset"><!--重置-->
+            <button type="button" disabled="disabled"><!--默认是提交-->
+                申请
+            </button>
+        </form>
+        
+    </div>    
+
+    <!--<div>-->
+        <!--<p></p>-->
+        <!--<p>-->
+            <!---->
+        <!--</p>-->
+        <!--<p>pppppp</p>-->
+    <!--</div>-->
+
+    <!--<div>-->
+        <!--<a href="#">超链接</a>-->
+        <!--<input type="text" value="中国队">-->
+    <!--</div>-->
+
+    <!--<div>-->
+        <!--<div id="div1">-->
+            <!--<h1>h1h1h1h</h1>-->
+            <!--<p>pppppp</p>-->
+            <!--<p>p1p1p1p1</p>-->
+            <!--<div>-->
+                <!--<h1>h1h1h1h</h1>-->
+                <!--<p>p1p1p1p1</p>-->
+                <!--<p>pppppp</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<h2>h2h2h2h2</h2>-->
+            <!--<p>ppppppppppppp</p>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<p>ppppppppppppp</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    
+    <!--<div>-->
+        <!--<ul>-->
+            <!--<p>ppppppp</p>-->
+            <!--<li>001</li>-->
+            <!--<li>002</li>-->
+            <!--<p>pppppppppph1h1h1h</p>-->
+            <!--<li>003</li>-->
+            <!--<li>004</li>-->
+            <!--<li>005</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素和关系选择符</title>
+    <style>
+        /*h1+p{!*紧跟在他后面的兄弟元素*!*/
+            /*color: red;*/
+        /*}*/
+        /*h1 + .ppp{*/
+            /*color: red;*/
+        /*}*/
+        /*h1~.ppp{!*在他后面的兄弟元素*!*/
+            /*color: #795da3;*/
+        /*}*/
+        /*p[class]{!*他的兄弟元素,前面的后面都可以*!*/
+            /*color: #047ffe;*/
+        /*}*/
+        /*p[class='ppp']{*/
+            /*color: #55a532;*/
+        /*}*/
+        /*p[class~='fff']{!*有 fff*!*/
+            /*color: #9a6e3a;*/
+        /*}*/
+        /*p[class^='fff']{!*里面匹配到fff且开头就行*!*/
+            /*color: #990055;*/
+        /*}*/
+        /*p[aa^='fff']{!*里面匹配到fff且开头就行*!*/
+            /*color: #990055;*/
+        /*}*/
+        /*p[class$='fff']{!*里面匹配到fff且结尾就行*!*/
+            /*color: #b3d4fc;*/
+        /*}*/
+        /*p[class*='fff']{!*里面匹配到fff就行*!*/
+            /*color: #ffc715;*/
+        /*}*/
+        p[class|='fff']{/*有fff-开头的*/
+            color: #26fcba;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="pppfff ">pppppp</p>
+        <h1>hhhhh</h1>
+        <p class>pppppp</p>
+        <h2>h2h2h2h2</h2>
+        <p class="ppp fff-">pppppp</p>
+        <h3>h3h3h3h3h3</h3>
+        <p class="ppp fff ">pppp</p>
+        <h4>h4h4h4h4h4h</h4>
+        <p class="fff-ppp">ppppp</p>
+        <h4>h4h4h4h4h4h</h4>
+        <p class="ffffppp">ppppp</p>
+        <h4>h4h4h4h4h4h</h4>
+        <p aa="ffff pp">ppppp</p>
+        <h4>h4h4h4h4h4h</h4>
+        <p class="pppffff">ppppp</p>
+        <h4>h4h4h4h4h4h</h4>
+        <p class="ffff pp ffff">ppppp</p>
+    </div>
+</body>
+</html>
