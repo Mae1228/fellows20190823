@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伸缩盒（弹性盒）</title>
+    <style>
+        #div1{
+            width: 800px;
+            height: 800px;
+            background: #cccccc;
+            display: flex;/*弹性盒模型结构：默认里面的子元素的排列顺序是水平的*/
+            flex-direction: column;/*列，设置里面的子元素垂直分布*/
+            align-items: center;/*如果flex-direction设置行则是垂直居中，如果设置列则是水平居中*/
+            justify-content: center;/*如果flex-direction设置行则是水平居中，如果设置列则是垂直居中*/
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*flex: 1;!*分份，分配剩余空间，表示该子元素占里面设置分份子元素的几份*!*/
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            /*flex: 2;!*分份*!*/
+        }
+        #div4{
+            width: 200px;
+            height: 200px;
+            background: #0000ff;
+            /*flex: 1;!*分份*!*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
+</body>
+</html>

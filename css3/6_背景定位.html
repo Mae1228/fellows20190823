@@ -8,12 +8,14 @@
             width: 300px;
             height: 200px;
             background-image: url("../img/1.jpg");/*没有高，高是内容撑开的*/
-            /*background-repeat: no-repeat;!*不平铺*!*/
+            background-repeat: no-repeat;/*不平铺*/
             /*background-repeat: repeat-x;!*在x轴上平铺*!*/
             /*background-repeat: repeat-y;!*在y轴上平铺*!*/
             /*background-position: 100px 30px;!*水平居中，垂直居中*!*/
             /*background-size: 100px 100px;!*设置图片的大小*!*/
-            background-size: cover;/*覆盖*/
+            /*background-size: cover;!*覆盖，等比例缩放，等缩放到父元素某一边框的的大小，保证了图片不会被压缩变形*!*/
+            background-size: contain;/*包含，等比例缩放，等缩放到图片可以完整放进父元素，保证了图片不会被压缩变形*/
+            background-color: yellow;/*图片在整个面积都有，只是被图片盖上了，如果是图片大小不够大，想用图片补充进去就用该属性*/
         }
     </style>
 </head>

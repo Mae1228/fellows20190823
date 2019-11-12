@@ -30,4 +30,14 @@ line-height:行高 -- 块级元素水平居中（设置在父元素上）
                 解决方案：知道高度，直接在他父元素加上高
                           不知道高度时，overflow:hidden
 伪元素 -- 在元素的最后孩子插入行级元素
+background-size: contain
+background-size: cover
+                 这两者的区别在于，contain是图片完全被放到父元素中，哪怕是图片的某一边框不够长也行
+                                   cover是图片被不一定完全放到父元素中，只要图片某一边框与父元素的某一边框等大小就行
+在伸缩盒中如果设置align-items: center和justify-content，则表示在水平和垂直都居中，这两者到底是水平还是垂直跟flex-direction有关
+
+
+
+
+
 
