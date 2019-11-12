@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画animation</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin: 200px;
+            /*animation: xxx 2s linear;!*动画：动画名称 通过2秒完成，与@keyframes xxx一起用*!*/
+            animation: xxx 2s linear reverse;/*动画反向运动*/
+            /*animation: xxx 2s linear 1s;!*延迟1秒后2秒完成*!*/
+            /*animation: xxx 2s linear 1s 2;!*延迟1秒后2秒完成，走两遍才结束*!*/
+            /*animation: xxx 2s linear 1s infinite;!*延迟1秒后2秒完成，并且是无限次循环*!*/
+            /*animation: xxx 2s linear 1s infinite paused;!*动画暂停，在js操作属性加上该属性*!*/
+            /*animation: xxx 2s forwards;!*动画：100%到什么位置它就到什么位置*!*/
+        }
+        @keyframes xxx {
+            0%{/*2秒最开始，初始可以不写，默认位置和行为*/
+                width: 600px;
+            }
+            50%{
+                width: 800px;
+                background: blue;
+                font-size: 50px;
+                opacity: 0%;/*透明度*/
+            }
+            80%{
+                background: url("../img/2.png");
+            }
+            100%{/*2秒结束*/
+                /*transform: translateZ(100px) rotate(30deg);*/
+                width: 400px;
+                background: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+</body>
+</html>

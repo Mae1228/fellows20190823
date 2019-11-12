@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        body{
+            perspective: 800px;/*透视距离，你眼球和屏幕在800px，宽度和高度还是200，但是鼠标滑到就不是200了，起到了渲染的效果*/
+        }
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin: 200px;
+            /*transform: scale(2,1);!*第一个值：水平方向缩放2，第二个值：垂直方向缩放0.5，如果只有一个值时等比例缩放*!*/
+            /*transform: scaleZ(2);*/
+            /*transform: skew(30deg);!*扭曲*!*/
+            /*transform: skewY(30deg);!*竖直扭曲，没有Z轴*!*/
+            /*transform: skew(90deg);!*扭曲90度成一条线，但是因为没有Z轴，没有厚度所以也就没有线*!*/
+            /*transform: translateZ(100px);!*正值放大，负值缩小*!*/
+            /*transform: rotateZ(30deg);!*沿着Z轴旋转30度*!*/
+            /*transform: rotateX(30deg);!*沿着X轴旋转30度,即上边的缩进去*!*/
+            /*transform: rotateY(30deg);!*沿着Y轴旋转30度,即下边的缩进去 同属性的只能被覆盖*!*/
+            /*transform: rotateX(30deg) rotateY30deg);!*同时沿着X轴旋转30度和Y轴旋转30度*!*/
+            /*transform: translateZ(100px) rotate(30deg);!*往前移动100，旋转30度*!*/
+            /*transition:  transform 1s linear;!*在1秒内线性移动，滑入动画滑出动画*!*/
+        }
+        #div1:hover{
+            /*transform: translateZ(100px) rotate(30deg);*/
+            /*transition:  transform 1s linear;!*在1秒内线性移动，在hover里面时,滑入动画滑出没有动画*!*/
+            /*transition:  transform 1s linear 2s;!*在1秒内线性移动，在hover里面时,滑入延迟2秒动画滑出没有动画*!*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+</body>
+</html>
