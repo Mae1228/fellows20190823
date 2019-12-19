@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支</title>
+</head>
+<body>
+<script>
+    var bool=true;
+    if(!bool){
+        console.log(111);
+    }else{
+        console.log(222);
+    }
+
+    var num=1;
+    if(num==1){
+        console.log(1);
+    }else if(num==2){
+        console.log(2);
+    }else {
+
+    }
+
+    //三元表达式
+
+    bool? console.log(1111):console.log(2222);//真的执行前面，假的执行后面
+    var xx=bool? 1:2;
+    console.log(xx);
+
+    var xx='a';
+    switch(xx){
+        case 'a':
+        case 'A':
+            console.log('aaaAAA0');//输入好几个都是输出一个东西
+            break;
+        case 1:
+            console.log(111);
+            break;
+        case 2:
+            console.log(222);
+            break;
+        case 3:
+            console.log(333);
+            break;
+        default:
+            console.log(444);
+    }
+
+</script>
+</body>
+</html>

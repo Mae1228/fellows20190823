@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        document.write('<h3>hello,javascript,world!</h3>');/*王文档（页面）写了h2标签*/
+
+    </script>
+</head>
+<body>
+<script>
+    document.write('<h2>hello,javascript,world!</h2>');/*文档（页面）写了h2标签   尽量放在body的最下面*/
+    document.write('<h2>javascript</h2>');/*往页面输出*/
+    console.log(555555);/*对用户没用，但是对于开发可以用来调试，通过控制台查看*/
+    console.log(44444);/*往后台输出*/
+    // var xx=5555;/*变量声明赋值*/
+    var xx;
+    xx=3333;/*先声明后赋值*/
+    console.log(xx);
+    console.log(xx);
+    console.log(xx);
+
+    var y=.3;
+    document.write(y);
+    console.log(typeof y);
+    var m=true;
+    console.log(typeof m);/*检测出变量的类型：string字符串 number数值 boolean布尔值 */
+    console.log(typeof 5==5);//先算typeof 5是number,number是一个字符串，不等于5
+    console.log(typeof (typeof 5));//字符串
+    console.log(typeof (5==5));//(5==5)是true，typeof true是布尔型
+    console.log('string'=='5');//相当于数值的1不等于2，里面的字符串不相等
+
+    var s='ssssss';
+    s=111112;
+    console.log(s);
+
+    var h;
+    console.log(h);//显示undefined，颜色是灰色的
+    console.log(typeof h);//显示undefined，颜色是黑色的
+
+    var a='hello';
+    var b='world';
+    console.log(a+b);
+    var s1='1111';
+    s1=s1+' 222';
+
+    console.log(s1);
+    var c=1;
+    console.log(c++);//在原来的基础上执行完console.log语句在加一，结果是1
+    console.log(c);//加一，结果是2
+    var c1=1;
+    c1++;
+    console.log(c1);//结果是2
+    var s=1;
+    console.log(5 + s++ +s);
+    console.log(s);
+
+    var d='1';
+    var e=true;
+    // console.log(d+e);//隐形的类型转换
+    // console.log(d+e.toString());//强制的类型转换
+    console.log(d+String(e));//强制类型转换
+    var f=4;
+    var g='asf';
+    console.log(f+Number(e));//true转换为数值是1，false转换为数值是0
+    console.log(f+Number(g));//字符型不能转换为数值的，显示NaN，即为No no Number
+
+    // alert(2!=2);//弹窗
+    // alert(!true);
+    // alert(e+'');
+
+    var j='';
+    console.log(!j);
+
+    console.log(false && 4);//&&：如果有个是假的，就不会参加运算了
+    console.log(true && 4);//&&：如果有个时真的，直接输出运算值
+
+    var h='22';
+    var i=3;
+    console.log(h*i);
+    console.log(h/i);//任意一个字符串加法，只能进行拼接，不能隐形转换
+    console.log(h-i);//任意一个字符串乘除减，如果可以转换成数字直接隐藏转换进行运算
+
+    var msg=window.prompt('please input a number','123');//前面是提示信息，后面是给定的值（可以修改），如果点击取消，输出Null
+    console.log(msg);
+    console.log(typeof msg);//null是基础类型
+    console.log(msg+1);//得到的是字符串类型
+    console.log(Number(msg)+2);//转换
+    console.log(msg*1 + 2);//转换
+
+</script>
+</body>
+</html>
