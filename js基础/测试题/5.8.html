@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.8</title>
+</head>
+<body>
+<script>
+
+    var months=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+    var da=new Date();
+    if (da.getFullYear()%4==0){
+        months.splice(1,1,29);//下标为1的取一位换成29
+    }
+    var sum=0;
+    for (var i=0;i<da.getMonth();i++){
+        sum+=months[i];
+    }
+    sum+=da.getDate();
+    console.log(sum);
+</script>
+</body>
+</html>

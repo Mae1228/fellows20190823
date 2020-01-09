@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试题5.9</title>
+</head>
+<body>
+<script>
+    function ran(x,y){
+        return Math.floor(Math.random()*(y-x+1)+x);
+    }
+    var arr=[];
+    for (var i=0;i<3;i++){
+        arr.push(ran(1,9));
+        // if (ran(1,9)==8){
+        //     console.log('success');
+        //     break;
+        // }
+    }
+    console.log(arr);
+    if (arr.indexOf(8)>-1){//indexOf()：存在返回数值的下标，存在多个返回第一个数值的下标，没有返回-1
+        console.log(arr.indexOf(8),'success');
+    }
+
+    // var a=new Array(5);//长度为5的数组
+    // var a=new Array;
+    var a=new Array('dvfds',' dsfa','dff 22');
+    // var a=new Array[10];//会报错
+
+</script>
+</body>
+</html>
