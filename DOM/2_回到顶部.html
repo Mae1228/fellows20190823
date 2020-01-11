@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2回到顶部</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        div{
+            width: 35px;
+            height: 74px;
+            /*图片往左移动22*/
+            background: url("go-top.jpeg") -22px;
+            position: fixed;
+            bottom: 50px;
+            /*距离body右边50*/
+            right: 50px;
+        }
+        div:hover{
+            background-position:-113px;
+        }
+    </style>
+</head>
+<body>
+fdfddddadadaasdd
+<div id="go-top"></div>
+<script>
+    var odiv=document.getElementById('go-top');//获取id
+    odiv.onclick=function () {
+        var top=document.documentElement.scrollTop;//获取当前滚动条的top位置  有兼容性问题
+        // var top=document.body.scrollTop;//获取当前滚动条的top位置  有兼容性问题
+        var top=document.body.scrollTop || document.documentElement.scrollTop;//解决兼容性问题：document.body.scrollTop好使就用它，不好使就用document.documentElement.scrollTop
+        setInterval(function () {//循环延迟触发
+            scrollTo(0,top*=0.6);//滚动条滚动到滚动条更新的位置
+            console.log(top);
+            if (top<=1){
+                clearInterval();//清除循环延迟装置
+            }
+        },100)
+    }
+</script>
+</body>
+</html>

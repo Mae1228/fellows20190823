@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1BOM</title>
+</head>
+<form action="xxx.html">
+    <!--使输入框和文字合成一个整体，点击文字焦点到输入框里面-->
+    <label for="div1">用户名：</label>
+    <input id="div1" type="text" name="username">
+    <label for="div2">密码：</label>
+    <input id="div2" type="password" name="password">
+
+    <!--<button>提交</button>-->
+</form>
+<button id="btn">取消</button>
+
+<a href="./back.html">链接</a>
+<body>
+<script>
+    // var oDiv=document.getElementById('div1');
+    // oDiv.focus();//自动获取焦点,id可以，class不行
+    // oDiv.blur();//失去焦点
+    // div1.focus();//有些浏览器好使可以自动获取焦点
+
+    // console.log(window.screenX);
+    // console.log(window.screenY);
+    // console.log(window.innerWidth);
+    // console.log(window.innerHeight);//你能看到的浏览器大小
+    // console.log(window.outerHeight);
+    // console.log(window.outerWidth);//浏览器自身大小
+
+    // var w=open('http://www.baidu.com','','width=300,height=200,left=200');//打开窗口网址，新建窗体名称，窗体属性，布尔值     记得打开网页拦截
+    // w.moveBy(300,100);//在原来基础上移动了300,100
+    // w.moveTo(300,100);//在原来基础上移动到了300,100
+    // w.resizeBy(400,200);//在原来基础上窗口扩大l了400,200
+    // w.resizeTo(400,200);//在原来基础上窗口扩大到400,200
+
+    // scrollTo(400,200);//在原来基础上滚动到400,，200
+    // scrollBy(400,200);//在原来基础上滚动了400,200
+
+    // var xx=confirm('确认删除吗？');
+    // if (xx){
+    //     console.log('删除成功');
+    // } else{
+    //     console.log('已取消');
+    // }
+
+    // 给放到延迟队列里面，当主线程有空再执行延迟队列，2秒不是一定的
+    // var timer=setTimeout(function () {//定时器：延迟2s执行这个函数，2000=2s
+    //     console.log(111);
+    // },2000);
+    // console.log(timer);//给定时器编号
+    // clearTimeout(timer);//清除定时器
+
+    // var timer=setInterval(function () {//每隔1秒执行重复执行以下函数
+    //     console.log(1);
+    // },1000)
+    // btn.onclick=function(){//点击就清除
+    //     clearInterval(timer);//清除
+    // }
+
+    // btn.onclick=function(){
+    //     history.forward();//省略window，当前页面中下一个URL
+    // }
+
+    // console.log(window.location.host);//设置或返回主机名和当前 URL 的端口号,本机：127.0.0.1，端口号：63342（本机都是一样的，可能个别的端口号不一样）
+
+    // btn.onclick=function () {
+    //     // location.href='back.html';
+    //     console.log(location.href);//设置或返回完整的 URL
+    //     console.log(location.pathname);//设置或返回当前 URL 的路径部分
+    //     console.log(location.protocol);//设置或返回当前 URL 的协议。在文件夹打开是file:协议，在westrom打开是http:协议
+    // }
+
+    btn.onclick=function () {
+        // console.log(navigator.appCodeName);//返回浏览器的代码名
+        //Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36
+        console.log(navigator.userAgent);
+        //Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Mobile Safari/537.36
+    }
+    if (navigator.userAgent.indexOf('Android')>-1){
+        location.href='http://m.taobao.com';
+    } else{
+        location.href='http://www.taobao.com';
+    }
+
+
+
+</script>
+</body>
+</html>

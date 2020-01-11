@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3DOM</title>
+</head>
+<body>
+    <p id="pi">pipipipipipipipipipipi</p>
+
+    <div id="div1" class="x">
+        <p class="x">ppppppppp</p>
+        <h1>h1h1h1hh1h</h1>
+        ssssss
+    </div>
+
+    <input type="text" name="s1" class="x">
+    <input type="text" name="s1">
+    <input type="text" name="s1">
+
+    <div class="x">
+        xxx
+    </div>
+
+<script>
+    // var p=document.getElementById('pi');
+    // console.log(p.tagName=='P');//返回标签名，标签名一定是大写的
+
+    //时间三要素：事件源onclick     时间的执行函数function    时间本身（时间对象）e
+    // var div=document.getElementById('div1');
+    // div.onclick=function (e) {
+    //     e = e || window.event;//解决IE的兼容性问题，前面是标准浏览器，后面是IE的
+    //     if (e.target.tagName=='P'){
+    //         console.log(111);
+    //     } else{
+    //         console.log(22);
+    //     }
+        // console.log(e.target);//真正触发谁这里它就是谁
+        // console.log(e.currentTarget);//不管你触发谁，事件绑在谁身上它就是谁
+        // console.log(this);//当前对象引用     事件绑在谁身上它就是谁    这个函数属于谁它就是谁
+    // }
+
+    // function fn() {
+    //     console.log(this);//这个函数属于window，所以this就是window
+    // }
+    // fn();
+
+    // var p=document.getElementsByTagName('p');//把当前全是p标签的放一起，可以当成数组来用
+    // console.log(p);
+    // p[0].style.color='red';//选中选择样式
+    // p[1].style.background='green';
+    // p[1].style.display='none';//隐藏
+
+    // var ap=document.getElementsByName('s1');
+    // console.log(ap);
+    // ap[0].style.color='red';//选中选择样式
+    // ap[1].style.background='green';
+    // ap[2].style.display='none';//隐藏
+
+    var aa=document.getElementsByClassName('x');//兼容性不好
+    aa[0].style.color='red';//选中选择样式
+    aa[1].style.background='green';
+    aa[2].style.display='none';//隐藏
+    aa[3].style.color='blue';
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

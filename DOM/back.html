@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>back</title>
+</head>
+<body>
+    我是back
+    <button id="btn">
+        返回
+    </button>
+<script>
+    console.log(history.length);
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function () {
+        // window.history.back();//当前页面中前一个URL
+        history.go(-1);//负数：当前页面往前，正数：当前页面往后
+    }
+</script>
+</body>
+</html>
