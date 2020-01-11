@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function fn(arr) {
+        for(let i=0;i<arr.length;i++){
+            let min = i;
+            for(let j=i+1;j<arr.length;j++){
+                if(arr[min] > arr[j]){
+                    min=j;
+                }
+            }
+            [arr[min],arr[i]] =  [arr[i],arr[min]];
+        }
+        return arr;
+    }
+    console.log(fn([2,5,1,4,53,21,75,23,12]));
+
+    //2,5,1,4,53,21,75,23,12
+    //1,5,2,4,53,21,75,23,12       2
+    //1,2,5,4,53,21,75,23,12
+
+
+</script>
+</body>
+</html>
