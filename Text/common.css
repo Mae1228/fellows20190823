@@ -1,0 +1,32 @@
+
+/*@media screen and (min-width: 320px) and (max-width: 900px){*/
+    *{
+        margin: 0;
+        padding:0;
+    }
+    body{
+        /*font:12px/1.5 tahoma,arial,"\5b8b\4f53" ;*/
+        background-color: #26fcba;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+    /*为了在整个屏幕居中*/
+    .wrapper{
+        /*width: 1500px;*/
+        width: 100%;
+        margin: 0 auto;
+        /*padding-left: 48px;*/
+
+    }
+    /*a标签去掉下划线*/
+    a{
+        text-decoration: none;
+        color: #000000;
+    }
+
+    li{
+        list-style: none;
+    }
+/*}*/
