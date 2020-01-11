@@ -57,7 +57,11 @@ NaN，即为No no Number
 空格字符串：本身为true
 字符串转换为数值：空字符串转换成数值为0
                   正常的字符串转换是NaN
-
+π：Math.PI
+chatAt：得到指定位置处的字符
+substr(x,y)：从x下标开始截取，截取y个
+substring(x,y)：从x下标开始截取，截取到y下标，不包括y下标
+习惯：对象o，数组a
 
 
 
