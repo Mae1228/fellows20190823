@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts4</title>
+    <!-- 引入 echarts.js -->  
+    <script src="../jquery-1.8.0.js"></script>  
+   <script type="text/javascript" src="../echarts.min.js" ></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->  
+    <div id="main" style="width: 198px;height:220px;background: #000;"></div>  
+    <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例  
+    var myChart = echarts.init(document.getElementById('main'));//定义折线图显示的位置对象
+    option = {
+        series: [{
+                type: 'pie',
+                radius: ['60%', '80%'],//60%代表里边空白的饼图的大小，80%代表外面饼图的大小
+                avoidLabelOverlap: false,
+                data: [{
+                    value: 335,
+                    name: '直接访问',
+                }],
+                label: {
+                    normal: {
+                        formatter: '{c}'+'个',//{c}表示数据
+                        position: 'center',//文字处于中心位置
+                        fontSize:'20',//文字大小
+                        color:'#fff'//文字颜色
+                    }
+                },
+            }],
+        color:'#fff'//背景颜色
+    };
+    myChart.setOption(option);
+    </script>
+    </body>
+</html>

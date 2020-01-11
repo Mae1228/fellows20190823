@@ -1,0 +1,104 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+        <meta charset="utf-8">  
+        <title>ECharts</title>  
+        <!-- 引入 echarts.js -->  
+        <script src="../jquery-1.8.0.js"></script>  
+        <script type="text/javascript" src="../echarts.min.js" ></script>
+</head>  
+<body>  
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->  
+    <div id="main" style="width: 600px;height:400px;"></div>  
+    <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例  
+    var myChart = echarts.init(document.getElementById('main'));//定义折线图显示的位置对象
+    function randomData() {
+        now = new Date();
+        value = value + Math.random() * 21 - 10;
+        return {
+            name: now.toString(),
+            value: [
+                // [now.getFullYear(),(now.getMonth()+1),now.getDay()].join('/'),
+                now.getTime(),
+                // [now.getHours(),now.getMinutes()],
+                Math.round(value),
+            ]
+
+        }
+    }
+
+    var data = [];
+    var now = new Date();
+    // var oneDay = 24 * 3600 * 1000;
+    var value = Math.random() * 1000;
+    for (var i = 0; i < 100; i++) {
+        data.push(randomData());
+    }
+
+    option = {
+        title: {
+            text: '动态数据 + 时间坐标轴'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                params = params[0];
+                var date = new Date(params.name);
+                return  date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDay() + '日'+ ' , ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' : ' + params.value[1];
+                // return date1.getTime()+' : ' + params.value[1];
+                // return params.value[1];
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        // grid:{
+        //     left:55
+        // },
+        xAxis: {
+            type: 'time',
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            splitLine: {
+                show: false
+            },
+            axisTick:{
+                show:false
+            },
+            axisLabel:{
+                show:false
+            }
+        },
+        series: [{
+            name: '模拟数据',
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
+            data: data,
+            itemStyle:{
+                normal:{
+                    areaStyle:{}
+                }
+            },
+            smooth:true,
+
+        }]
+    };
+
+    setInterval(function () {
+
+        for (var i = 0; i < 1; i++) {
+            data.shift();
+            data.push(randomData());
+        }
+        myChart.setOption(option);
+    }, 1000);
+</script>  
+</body>  
+</html> 

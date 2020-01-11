@@ -1,0 +1,140 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+   <meta charset="utf-8">  
+   <title>ECharts</title>  
+   <!-- 引入 echarts.js -->  
+   <script src="../jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="../echarts.min.js" ></script>
+    <style>
+        body{
+            padding: 0;
+            border: 0px;
+            width: 198px;
+            height: 220px;
+        }
+    </style>
+</head>  
+<body>  
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->  
+   <div id="main" style="width: 198px;height:220px;background: #000;"></div>
+   <script type="text/javascript" style="border: 0;padding: 0" >
+    // 基于准备好的dom，初始化echarts实例  
+    var myChart = echarts.init(document.getElementById('main'));//定义折线图显示的位置对象
+    function randomData() {
+        now = new Date();
+        value = value + Math.random() * 21 - 10;
+        return {
+            name: now.toString(),
+            value: [
+                // [now.getFullYear(),(now.getMonth()+1),now.getDay()].join('/'),
+                now.getTime(),
+                // [now.getHours(),now.getMinutes()].join(':'),
+                Math.round(value),
+            ]
+
+        }
+    }
+
+    var data = [];
+    var now = new Date();
+    // var oneDay = 24 * 3600 * 1000;
+    var value = Math.random() * 1000;
+    for (var i = 0; i < 100; i++) {
+        data.push(randomData());
+    }
+
+    option = {
+        // title: {
+        //     text: '动态数据 + 时间坐标轴'
+        // },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                params = params[0];
+                var date = new Date(params.name);
+                // return  date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDay() + '日' +  ' : ' + params.value[1];
+                // return date1.getTime()+' : ' + params.value[1];
+                return params.value[1];
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        grid:{
+            left:-0.1,
+            top:-0.1,
+            containLabel:true
+        },
+        xAxis: {
+            type: 'time',
+            splitLine: {
+                show: false
+            },
+            axisLabel:{
+                textStyle:{
+                    color:'#3c2eff',//更改坐标轴下文字的颜色
+                    // fontSize:14
+                }
+            },
+            axisLine:{
+                lineStyle:{
+                    color:'#3c2eff' //更改坐标轴颜色
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%'],//关于图四周留白
+            splitLine: {
+                show: true,//显示一轴的每个刻度的长线
+                lineStyle:{
+                    color:'#3c2eff' //更改坐标轴颜色
+                }
+            },
+            axisTick:{
+                show:false//去掉刻度数后面，y轴前面的小短线
+            },
+            axisLabel:{
+                show:false,//去掉刻度数
+            },
+            axisLine:{
+                lineStyle:{
+                    color:'#3c2eff' //更改坐标轴颜色
+                }
+            }
+        },
+        series: [{
+            name: '模拟数据',
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
+            data: data,
+            itemStyle:{
+                normal:{
+                    areaStyle:{
+                        color:'#26fcba',//显示折线下阴影面积的颜色
+                    }
+                }
+            },
+            smooth:true,//显示有弧度的折线
+            // label:{
+            //     normal:{
+            //         show:true,//显示数据的文字
+            //         position:'top'
+            //     }
+            // }
+        }]
+    };
+
+    setInterval(function () {
+
+        for (var i = 0; i < 3; i++) {
+            data.shift();
+            data.push(randomData());
+        }
+        myChart.setOption(option);
+    }, 1000);//1000表示延时，越小数据更新越快
+</script>  
+</body>  
+</html> 

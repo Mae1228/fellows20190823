@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts1</title>
+</head>
+<body>
+    <div id="main" style="height: 500px; width: 800px;"></div>
+    <script type="text/javascript" src="../echarts.min.js"></script>
+    <script type="text/javascript">
+        var myecharts=echarts.init(document.getElementById('main'));
+        var option={
+            title:{
+                text:'测试'//这个图形的名字
+            },
+            tooltip:{
+                trigger:'axis',
+                axisPointer:{
+                    type:'cross',//十字准星指示器
+                    label:{
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend:{
+                data:['11','22','33','44']//不同的项目名
+            },
+            toolbox:{
+                feature:{
+                    saveAsImage:{}//可以下载保存为图片
+                }
+            },
+            grid:{//使图形移动
+                left:'3%',
+                right:'3%',
+                bottom:'3%',
+                containLabel:true//保证不溢出
+            },
+            xAxis:{
+                // type : 'category',
+                type:'time',
+                boundaryGap:false,//显示左右不留边
+                // data:['one','two','three','four','five','six','seven'],
+                min:dataMin.getTime(),
+                max:dataMax.getTime(),
+                interval:(dataMin.getTime()-dataMax.getTime())/2,
+                axisLabel:{
+                    show:true
+                },
+                axisLine:{
+                    show:false
+                },
+                splitNumber:12,
+                splitLine:{
+                    show:true
+                }
+            },
+            yAxis:{
+                type:'value',
+                splitLine:{
+                    show:true//显示横线
+                }
+            },
+            series:[{
+                name:'11',
+                data:[11,29,19,85,65,76,22],
+                type:'line',
+                itemStyle:{
+                    normal:{
+                        areaStyle: {}
+                    }
+                },
+                smooth:true
+            },
+            {
+                name:'22',
+                data:[15,49,39,75,25,96,42],
+                type:'line',
+                itemStyle:{
+                    normal:{
+                        areaStyle: {}
+                    }
+                },
+                smooth:true
+            },
+            {
+                name:'33',
+                data:[35,49,69,25,75,66,52],
+                type:'line',
+                itemStyle:{
+                    normal:{
+                        areaStyle: {}
+                    }
+                },
+                smooth:true
+            },
+            {
+                name:'44',
+                data:[5,19,49,55,35,46,82],
+                type:'line',//曲线
+                label:{
+                    normal:{
+                        show:true,//显示数据的文字
+                        position:'top'
+                    }
+                },
+                itemStyle:{
+                    normal:{
+                        areaStyle: {}//显示区域颜色
+                    }
+                },
+                smooth:true//显示圆滑的折线
+            }]
+        };
+        myecharts.setOption(option);
+    </script>
+</body>
+</html>
