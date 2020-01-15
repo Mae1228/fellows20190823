@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no">
     <link rel="shortcut icon" href=" ./img/bitbug_favicon.ico" />
     <link rel="stylesheet" href="./font/iconfont.css">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="index.css">
-    <script type="text/javascript" src="../echarts.min.js" ></script>
+    <script type="text/javascript" src="./echarts.min.js" ></script>
+    <script type="text/javascript" scr="./jquery-1.8.0.min.js"></script>
 </head>
 <body>
     <div id="header1">
@@ -34,7 +35,7 @@
                 <div class="number-person">
                     <div class="small">
                         <div class="number">
-                            11111111111
+                            11111111
                         </div>
                         <span>人</span>
                     </div>
@@ -68,21 +69,44 @@
             </div>
             <div class="center first2-2">
                 <div class="center-head">
-                    <div class="year">
-                        nianyueri
+                    <div class="year" id="year">
+                        <script>
+                            setInterval(function () {
+                                var da=g=new Date();
+                                var s=da.getFullYear()+'年'+da.getMonth()+1+'月'+da.getDate()+'日';
+                                document.getElementById('year').innerText=s;
+                            },1000)
+                        </script>
                     </div>
-                    <div class="date">
+
+                    <div class="date" id="date">
                         <div>
-                            xingqi
+                            <script>
+                                setInterval(function () {
+                                    var da=g=new Date();
+                                    var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+                                    var s=weekday[da.getDay()]+' '+da.getHours()+' : '+da.getMinutes()+' : '+da.getSeconds();
+                                    document.getElementById('date').innerText=s;
+                                },1000)
+                            </script>
                         </div>
                     </div>
                 </div>
                 <div class="center-picture">
-                    <video width="300" height="250" controls="controls">
+                    <video  id="video1" width="300" height="250" autoplay="autoplay" muted loop>
                         <source src="./img/VID_20191228_172156.mp4" type="video/mp4"/>
-                    you
                     </video>
+                    <button id="play"></button>
                 </div>
+                <script>
+                    document.getElementById('video1').onclick=function () {
+                        if (this.paused){
+                            this.play();
+                        }else {
+                            this.pause();
+                        }
+                    }
+                </script>
             </div>
             <div class="first first2 first2-2">
                 <div class="head2">
@@ -121,7 +145,7 @@
                     本周已参观团队
                 </div>
                 <div class="biao">
-                    <iframe src="../echarts/4.html" width="198" height="220" frameborder="0" scrolling="no"></iframe>
+                    <iframe src="../echarts/4.html" width="198" height="220" frameborder="0" scrolling="no" ></iframe>
                 </div>
             </div>
         </div>
@@ -148,168 +172,218 @@
                         <i class="iconfont icon-dianji blue dianji"></i>
                     </div>
                     <div class="left3-center-last">
-                        <ul>
+                        <ul class="ul-list">
                             <li class="li-head li-center">
                                 <ul class="ul-hang">
                                     <li class="li-biaohao">
-                                        bianhao
+                                        标题
                                     </li>
                                     <li class="li-danwei">
-                                        danwei
+                                        单位
                                     </li>
                                     <li class="li-renshu">
-                                        renshu
+                                        人数
                                     </li>
                                     <li class="li-shijian">
-                                        shijian
+                                        时间
                                     </li>
                                     <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="li-center">
-                                <ul class="ul-hang">
-                                    <li class="li-biaohao">
-                                        bianhao
-                                    </li>
-                                    <li class="li-danwei">
-                                        danwei
-                                    </li>
-                                    <li class="li-renshu">
-                                        renshu
-                                    </li>
-                                    <li class="li-shijian">
-                                        shijian
-                                    </li>
-                                    <li class="li-zhuangtai">
-                                        zhuangtai
+                                        状态
                                     </li>
                                 </ul>
                             </li>
                         </ul>
+                        <script language="javascript">
+                            // var arr = new Array(
+                            //     "1,数据一0q,数据二,数据三,数据四,数据五",
+                            //     "2,数据一1w,数据二,数据三,数据四,数据五",
+                            //     "3,数据一2e,数据二,数据三,数据四,数据五",
+                            //     "4,数据一3r,数据二,数据三,数据四,数据五",
+                            //     "5,数据一4t,数据二,数据三,数据四,数据五",
+                            //     "6,数据一5y,数据二,数据三,数据四,数据五",
+                            //     "12,数据一6u,数据二,数据三,数据四,数据五",
+                            //     "13,数据一7i,数据二,数据三,数据四,数据五",
+                            //     "41,数据一8o,数据二,数据三,数据四,数据五",
+                            //     "51,数据一9p,数据二,数据三,数据四,数据五",
+                            //     "61,数据一10l,数据二,数据三,数据四,数据五",
+                            // );
+                            var arr = new Array();
+                            var n=1;
+                            for(var i = 0;i < 20; i++){
+                                arr[i] = []; //每行有10列
+                                for(var j = 0;j < 5; j++){
+                                    arr[i][j] = n;
+                                    n++;
+                                }
+                            }
+                            document.write('<ul id="ul" class="ul-list">');
+                            var list1="";
+                            for (var i=0;i<arr.length;i++) {
+                                list1 += "<li class='li-center'><ul class='ul-hang'>";
+                                var list2='';
+                                // var s=arr[i].split(',');
+                                var s=arr[i];
+                                // console.log(s);
+                                for (var j=0;j<s.length;j++){
+                                    list2 +="<li>"+s[j]+"</li>";
+                                }
+                                list1+=list2 +"</ul></li>";
+                            }
+                            document.getElementById('ul').innerHTML = list1;
+                        </script>
+                        <!--<ul class="ul-list" id="ul">-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="li-center">-->
+                                <!--<ul class="ul-hang">-->
+                                    <!--<li class="li-biaohao">-->
+                                        <!--bianhao-->
+                                    <!--</li>-->
+                                    <!--<li class="li-danwei">-->
+                                        <!--danwei-->
+                                    <!--</li>-->
+                                    <!--<li class="li-renshu">-->
+                                        <!--renshu-->
+                                    <!--</li>-->
+                                    <!--<li class="li-shijian">-->
+                                        <!--shijian-->
+                                    <!--</li>-->
+                                    <!--<li class="li-zhuangtai">-->
+                                        <!--zhuangtai-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                        <!--</ul>-->
                     </div>
+                    <script>
+                        var c,_=Function;
+                        with(o=document.getElementById("ul")){
+                            innerHTML+=innerHTML;
+                            onmouseover=_("c=1");
+                            onmouseout=_("c=0");
+                        }
+
+                        (F=_("if(#%18||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%18?10:1500);".replace(/#/g,"o.scrollTop")))();
+                    </script>
                 </div>
                 <div class="left3-last">
                     <div class="left3-last-left">
                         展厅通告：
                     </div>
                     <div class="left3-last-right">
-                        <marquee behavior="scroll" direction="left" width="410px">
+                        <marquee behavior="scroll" direction="left" width="100%">
                         点点滴滴的多多多多多多多多多多多多多多--少时诵诗书所所所所所所所所！
                         </marquee>
                     </div>
