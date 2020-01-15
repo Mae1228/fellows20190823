@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4右键菜单</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+        }
+        /*去掉li前面的小点*/
+        li{
+            list-style: none;
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid #000000;
+            text-align: center;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #menu li{
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+            line-height: 30px;
+
+        }
+        /*最后一个li没有下边线*/
+        #menu li:last-child{
+            border-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>打开</li>
+        <li>下载</li>
+        <li>删除</li>
+        <li>复制</li>
+        <li>属性</li>
+    </ul>
+    <!--<ul>-->
+        <!--<li>llllllllliiiiiiiii</li>-->
+    <!--</ul>-->
+    <!--<a id="a1" href="http://www.baidu.com">链接</a>-->
+    <script>
+        // document.getElementById('a1').onclick=function(e){
+        //     console.log(22);
+        //     e.preventDefault();
+        // }
+
+        var oMenu=document.getElementById('menu');
+        // 取消浏览器右键的默认行为
+        document.oncontextmenu=function (e) {
+            oMenu.style.display='block';
+            var dw=document.documentElement.offsetWidth;
+            var xw=oMenu.offsetWidth;
+            var dh=document.documentElement.offsetHeight;
+            var yh=oMenu.offsetHeight;
+            if (e.clientX>(dw-xw)){
+                oMenu.style.left=(e.clientX-xw)+'px';//右
+                oMenu.style.top=e.clientY+'px';
+                // if (e.clientY>(dh-yh)) {
+                //     oMenu.style.top = (e.clientY - yh) + 'px';//下
+                // }else {
+                //     oMenu.style.top=e.clientY+'px';
+                // }
+            } else {
+                oMenu.style.top = e.clientY + 'px';//当事件被触发时，鼠标指针的垂直坐标。
+                oMenu.style.left = e.clientX + 'px';//当事件被触发时，鼠标指针的水平坐标。
+            }
+            
+            // console.log(e.clientX);
+            // e.returnValue=false;//属性：IE取消浏览器默认的属性。    如果设置了该属性，它的值比事件句柄的返回值优先级高。把这个属性设置为 fasle，可以取消发生事件的源元素的默认动作。
+            // e.preventDefault();//方法：标准浏览器取消浏览器默认的属性。   通知标准浏览器不要执行与事件关联的默认动作。
+            return false;//取消浏览器默认的属性
+        }
+        document.onclick=function () {
+            oMenu.style.display='none';
+        }
+        var aLi=document.getElementsByTagName('li');
+        // var aLi=oMenu.getElementsByTagName('li');//在id=menu下面找li,获取id只能是在文档下
+        for (var i=0;i<aLi.length;i++){
+            aLi[i].onmouseover=function () {//鼠标移到某元素之上。
+                this.style.background='#ccc';
+            }
+            aLi[i].onmouseout=function () {//鼠标从某元素移开。
+                this.style.background='';
+            }
+            aLi[i].onclick=function () {
+                alert(this.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

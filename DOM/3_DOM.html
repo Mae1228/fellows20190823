@@ -56,12 +56,17 @@
     // ap[1].style.background='green';
     // ap[2].style.display='none';//隐藏
 
-    var aa=document.getElementsByClassName('x');//兼容性不好
-    aa[0].style.color='red';//选中选择样式
-    aa[1].style.background='green';
-    aa[2].style.display='none';//隐藏
-    aa[3].style.color='blue';
+    // var aa=document.getElementsByClassName('x');//兼容性不好
+    // aa[0].style.color='red';//选中选择样式
+    // aa[1].style.background='green';
+    // aa[2].style.display='none';//隐藏
+    // aa[3].style.color='blue';
 
+    var div=document.getElementById('div1');
+    console.log(div.getAttribute('id'));//获取和设置元素属性
+    // console.log(div.id);//获取和设置id值
+    div.setAttribute('id','div2');
+    div.id='div2';//自定义的元素属性不能用
 
 
 
