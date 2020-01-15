@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js实现消息滚动效果</title>
+    <!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="./jquery-1.8.0.min.js"></script>
+
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        .left3-center-last {
+            width:800px;
+            height:200px;
+            border:2px solid #000;
+            margin:20px auto;
+            overflow:hidden;
+        }
+        .left3-center-last #ul {
+            list-style:none;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+        .left3-center-last #ul .li-center {
+            width:100%;
+            height:40px;
+            box-sizing:border-box;
+            line-height:40px;
+            text-align:left;
+            /*color: white;*/
+            border-bottom: blue solid 1px;
+            overflow: hidden;
+            /*padding: 5px 0;*/
+        }
+        .left3-center-last .ul-hang li{
+            width: 150px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="left3-center-last">
+    <script language="javascript">
+        // var arr = new Array(
+        //     "1,数据一0q,数据二,数据三,数据四,数据五",
+        //     "2,数据一1w,数据二,数据三,数据四,数据五",
+        //     "3,数据一2e,数据二,数据三,数据四,数据五",
+        //     "4,数据一3r,数据二,数据三,数据四,数据五",
+        //     "5,数据一4t,数据二,数据三,数据四,数据五",
+        //     "6,数据一5y,数据二,数据三,数据四,数据五",
+        //     "12,数据一6u,数据二,数据三,数据四,数据五",
+        //     "13,数据一7i,数据二,数据三,数据四,数据五",
+        //     "41,数据一8o,数据二,数据三,数据四,数据五",
+        //     "51,数据一9p,数据二,数据三,数据四,数据五",
+        //     "61,数据一10l,数据二,数据三,数据四,数据五",
+        // );
+        var arr = new Array();
+        var n=1;
+        for(var i = 0;i < 20; i++){
+            arr[i] = []; //每行有10列
+            for(var j = 0;j < 5; j++){
+                arr[i][j] = n;
+                n++;
+            }
+        }
+        document.write('<ul id="ul" class="ul-list">');
+        var list1="";
+        for (var i=0;i<arr.length;i++) {
+            list1 += "<li class='li-center'><ul class='ul-hang'>";
+            var list2='';
+            // var s=arr[i].split(',');
+            var s=arr[i];
+            // console.log(s);
+            for (var j=0;j<s.length;j++){
+                list2 +="<li>"+s[j]+"</li>";
+            }
+            list1+=list2 +"</ul></li>";
+        }
+        document.getElementById('ul').innerHTML = list1;
+    </script>
+</div>
+
+<script>
+    var c,_=Function;
+    with(o=document.getElementById("ul")){
+        innerHTML+=innerHTML;
+        onmouseover=_("c=1");
+        onmouseout=_("c=0");
+    }
+
+    (F=_("if(#%18||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%18?10:1500);".replace(/#/g,"o.scrollTop")))();
+</script>
+
+</body>
+</html>
