@@ -11,40 +11,102 @@
     <script type="text/javascript" src="./jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="js/style.js"></script>
     <style>
-        *{margin:0px;padding:0px}
-        li{list-style:none}
-        a{text-decoration:none}
-        img{border:0px}
-        .banner{width:350px;height:495px;margin:100px auto;position:relative;overflow:hidden}
-        .banner .pic{width:9999px;height:495px}
-        .banner .pic li{width:350px;height:495px;float:left}
-        .banner .anniu{width:100px;height:16px;position:absolute;left:165px;top:470px}
-        .banner .anniu li{width:16px;height:16px;background:white;float:left;margin:2px;display:inline;
-            cursor:pointer;border-radius:100%}
-        .banner .anniu li.on{background:red}
-        .banner .lr{width:350px;height:50px;position:absolute;top:250px;display:none}
-        .banner .lr a{color:white}
-        .banner .lr .pre{width:20px;height:50px;float:left;background:none repeat scroll 0px 0px rgba(1, 0, 0, 0.6);text-align:center;line-height:50px;cursor:pointer}
-        .banner .lr .next{width:20px;height:50px;float:right;background:none repeat scroll 0px 0px rgba(1, 0, 0, 0.6);text-align:center;line-height:50px;cursor:pointer}
+        *{
+            margin:0px;
+            padding:0px
+        }
+        li{
+            list-style:none
+        }
+        a{
+            text-decoration:none
+        }
+        img{
+            border:0px
+        }
+        .banner{
+            width:350px;
+            height:495px;
+            margin:100px auto;
+            position:relative;
+            overflow:hidden
+        }
+        .banner .pic{
+            width:9999px;
+            height:495px
+        }
+        .banner .pic li{
+            width:350px;
+            height:495px;
+            float:left
+        }
+        .banner .anniu{
+            width:100px;
+            height:16px;
+            position:absolute;
+            left:165px;
+            top:470px
+        }
+        .banner .anniu li{
+            width:16px;
+            height:16px;
+            background:white;
+            float:left;
+            margin:2px;
+            display:inline;
+            cursor:pointer;
+            border-radius:100%
+        }
+        .banner .anniu li.on{
+            background:red
+        }
+        .banner .lr{
+            width:350px;
+            height:50px;
+            position:absolute;
+            top:250px;
+            display:none
+        }
+        .banner .lr a{
+            color:white
+        }
+        .banner .lr .pre{
+            width:20px;
+            height:50px;
+            float:left;
+            background:none repeat scroll 0px 0px rgba(1, 0, 0, 0.6);
+            text-align:center;
+            line-height:50px;
+            cursor:pointer
+        }
+        .banner .lr .next{
+            width:20px;
+            height:50px;
+            float:right;
+            background:none repeat scroll 0px 0px rgba(1, 0, 0, 0.6);
+            text-align:center;
+            line-height:50px;
+            cursor:pointer
+        }
     </style>
 </head>
 <body>
 <div class="banner">
     <ul class="pic">
         <li>
-            <a href="#"><img src="img/1.jpg" alt="美女" width="350" height="495"></a>
+            <a href="#"><img src="img/1.jpg" alt="美女" width="350" height="200"></a>
         </li>
         <li>
-            <a href="#"><img src="img/2.jpg" alt="美女" width="350" height="495"></a>
+            <a href="#"><img src="img/2.jpg" alt="美女" width="350" height="200"></a>
         </li>
         <li>
-            <a href="#"><img src="img/3.jpg" alt="美女" width="350" height="495"></a>
+            <a href="#"><img src="img/3.jpg" alt="美女" width="350" height="200"></a>
         </li>
         <li>
-            <a href="#"><img src="img/4.jpg" alt="美女" width="350" height="495"></a>
+            <a href="#"><img src="img/4.jpg" alt="美女" width="350" height="200"></a>
         </li>
         <li>
-            <a href="#"><img src="img/5.jpg" alt="美女" width="350" height="495"></a>
+            <a href="#"><img src="img/5.jpg" alt="美女" width="350" height="200"></a>
         </li>
     </ul>
     <ul class="anniu">
@@ -67,7 +129,7 @@
         },function(){
             $(".lr").hide();
         });
-        //点击下面的小按钮，图片进行左右切换效果
+        // 点击下面的小按钮，图片进行左右切换效果
         $(".anniu li").click(function(){
             $(this).addClass("on").siblings().removeClass("on");
             var num=$(this).index();
@@ -80,7 +142,7 @@
             a=a%5;
             $(".pic").animate({marginLeft:-350*a},"slow");
             $(".anniu li").eq(a).addClass("on").siblings().removeClass("on");
-        },6000);
+        },1000);
         //点击左右按钮，图片进行切换效果
         $(".pre").click(function(){
             a--;

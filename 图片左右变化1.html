@@ -8,21 +8,21 @@
         /*图片div*/
         #slide{
             overflow: hidden; /*溢出则隐藏*/
-            width:268px;    /*要显示图片框的大小*/
+            width:350px;    /*要显示图片框的大小*/
             height:200px;
             position: relative;    /*相对定位*/
         }
         /*图片列表*/
         #photos{
             padding:0px;    /*迷之边框，不明原因*/
-            width:1200px; /*要足够大*/
-            height: 200px;
+            /*width:1200px; !*要足够大*!*/
+            /*height: 200px;*/
             position: absolute;    /*绝对定位*/
         }
         #photos li{
             float:left;    /*图片横向浮动*/
-            width:260px;
-            height:200px;
+            /*width:350px;*/
+            /*height:200px;*/
             list-style: none;
 
         }
@@ -31,9 +31,9 @@
 <body>
 <div id="slide">
     <ul id="photos">
-        <li><img src="img/4.jpg"></li>
-        <li><img src="img/2.jpg"></li>
-        <li><img src="img/3.jpg"></li>
+        <li><img src="./img/5.jpg" width="380" height="200"></li>
+        <li><img src="./img/2.jpg" width="380" height="200"></li>
+        <li><img src="./img/3.jpg" width="380" height="200"></li>
     </ul>
 </div>
 <script>
