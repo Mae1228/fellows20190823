@@ -242,9 +242,9 @@
 }
 #header3 .left3-center-last #ul .li-center {
     width:100%;
-    height:40px;
+    height:36px;
     box-sizing:border-box;
-    line-height:40px;
+    line-height:36px;
     text-align:left;
     /*color: white;*/
     border-bottom: blue solid 1px;
@@ -298,12 +298,42 @@
     top:-15px;
     padding: 5px 20px;
 }
-#header3 .center3 img{
-    width: 380px;
-    height: 243px;
-    margin-top: 20px;
+#header3 .center3-center{
     background: #000;
+    margin-top: 20px;
 }
+#header3 .center3-center p{
+    color: white;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+#header3 #slide{
+    overflow: hidden; /*溢出则隐藏*/
+    width:380px;    /*要显示图片框的大小*/
+    height:200px;
+    position: relative;    /*相对定位*/
+
+}
+#header3 #photos{
+    padding:0;    /*迷之边框，不明原因*/
+    /*width:1200px; !*要足够大*!*/
+    /*height: 200px;*/
+    position: absolute;    /*绝对定位*/
+
+}
+#header3 #photos li{
+    float:left;    /*图片横向浮动*/
+    /*width:380px;*/
+    /*height:200px;*/
+    list-style: none;
+}
+/*#header3 .center3 img{*/
+    /*width: 380px;*/
+    /*height: 243px;*/
+    /*margin-top: 20px;*/
+    /*background: #000;*/
+/*}*/
 #header3 .right3{
     float: left;
     /*border: blue solid 1px;*/
