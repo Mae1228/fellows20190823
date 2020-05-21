@@ -6,12 +6,35 @@
 </head>
 <body>
 <script>
-    function fn() {//定义函数
-        var a=window.prompt('input width');
-        var b=window.prompt('input height');
-        console.log(a*b/2);
+    // fn();
+    // function fn() {//定义函数
+    //     var a=window.prompt('input width');
+    //     var b=window.prompt('input height');
+    //     console.log(a*b/2);
+    // }
+    // fn();//调用函数
+    //
+    // var xx=function () {
+    //     var a=1,b=3;
+    //     return b-a;
+    // }
+    // console.log(xx);
+
+    // // var变量提升：在前面声明c，但是没有赋值
+    // function f() {
+    //     console.log(c);
+    // }
+    //
+    // var c=5;
+    // f();
+
+    function f1() {
+        a=1;//在函数里面没有var定义变量，相当于在全局定义变量
+        console.log(a);
     }
-    fn()//调用函数
+    f1();
+    console.log(a+3);
+    console.log(window);//全局对象
 
 </script>
 </body>

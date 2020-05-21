@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script交互</title>
+    <!--<script>-->
+        <!--function myFn() {-->
+            <!--alert('图片加载完成');-->
+        <!--}-->
+    <!--</script>-->
+
+    <style>
+        .a{
+            background: red;
+        }
+        .b{
+            background: blue;
+        }
+    </style>
+    <script>
+        window.onload=function () {//浏览器事件，HTML文件加载完成后执行onload，包括资源文件
+            // var img=document.getElementById('img');
+            // img.onclick=function () {
+            //     console.log(222);
+            // }
+
+            var img=document.getElementById('img');
+            console.log(img.className);
+            console.log(img.tagName);
+
+            var div1=document.getElementById('div1');
+            console.log(div1.innerHTML);//内容包括回车,所有内容
+            div1.onclick=function () {
+                div1.innerHTML='我是div1';
+                // div1.style.background='blue';
+                div1.className='b';
+            }
+        }
+    </script>
+</head>
+<body>
+<!--<img src="../img/1.jpg" onmousemove="alert('你把我点疼了')">-->
+<!--&lt;!&ndash;this指的是img&ndash;&gt;-->
+<!--<img src="../img/1.jpg" alt="" onmousemove="this.src='../img/2.jpg'" onmouseout="this.src='../img/3.jpg'">-->
+<!--<img src="../img/4.jpg" alt="" onload="myFn()">-->
+
+<img id="img" class="imgclass" src="../img/5.jpg" alt="">
+<!--<script>-->
+    <!--var img=document.getElementById('img');-->
+    <!--img.onclick=function () {-->
+        <!--console.log(222);-->
+    <!--}-->
+<!--</script>-->
+
+<div id="div1" class="a">
+    dffffssas
+    <p>
+        ppppppfiv
+    </p>
+</div>
+</body>
+</html>

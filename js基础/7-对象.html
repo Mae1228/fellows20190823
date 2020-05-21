@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+
+    // var obj=new Object();
+    // obj.name='zs';
+    // obj.age=23;
+    // obj.sex='女';
+    // obj.eat=function(){
+    //     console.log('are you eat?');
+    //     return 'eat.';
+    // }
+    // console.log(obj.eat());
+    // console.log(obj.name);
+
+    var obj1={
+        name:'ls',
+        age:22,
+        sex:'男'
+    }
+    for (var i in obj1){//循环对象，i代表循环属性
+        console.log(i);
+        console.log(obj1[i]);//获取对象动态属性值
+        console.log(obj1.sex);
+    }
+
+
+</script>
+</body>
+</html>
