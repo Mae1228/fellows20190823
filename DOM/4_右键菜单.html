@@ -59,18 +59,22 @@
             var xw=oMenu.offsetWidth;
             var dh=document.documentElement.offsetHeight;
             var yh=oMenu.offsetHeight;
-            if (e.clientX>(dw-xw)){
-                oMenu.style.left=(e.clientX-xw)+'px';//右
-                oMenu.style.top=e.clientY+'px';
-                // if (e.clientY>(dh-yh)) {
-                //     oMenu.style.top = (e.clientY - yh) + 'px';//下
-                // }else {
-                //     oMenu.style.top=e.clientY+'px';
-                // }
+            if (e.clientX>(dw-xw) && e.clientY<(dh+yh)) {
+                oMenu.style.left = (e.clientX - xw) + 'px';//右
+                oMenu.style.top = e.clientY + 'px';
+            }
+            else if (e.clientY>(dh+yh) && e.clientX<(dw-xw)) {
+                oMenu.style.top = (e.clientY - yh) + 'px';//下
+                oMenu.style.left = e.clientX + 'px';
+            }
+             else if (e.clientY>(dh+yh) && e.clientX>(dw-xw)) {
+                oMenu.style.top = (e.clientY - yh) + 'px';//下
+                oMenu.style.left = (e.clientX - xw) + 'px';
             } else {
                 oMenu.style.top = e.clientY + 'px';//当事件被触发时，鼠标指针的垂直坐标。
                 oMenu.style.left = e.clientX + 'px';//当事件被触发时，鼠标指针的水平坐标。
             }
+
             
             // console.log(e.clientX);
             // e.returnValue=false;//属性：IE取消浏览器默认的属性。    如果设置了该属性，它的值比事件句柄的返回值优先级高。把这个属性设置为 fasle，可以取消发生事件的源元素的默认动作。
