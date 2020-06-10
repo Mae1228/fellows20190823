@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-渐变轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+        img{
+            position: absolute;
+        }
+        #right{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 99999;
+        }
+        #right li,#left li{
+            float: left;
+            margin-right: 10px;
+            background: #000000;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #right li:last-child,#left li:last-child{
+            margin-right: 0;
+        }
+        #left{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 99999;
+        }
+        #right .second{
+            background: #ffc715;
+        }
+        #imgs .first{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <div id="imgs">
+        <img class="first" src="./img/1.jpg" alt="">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <img src="./img/4.jpg" alt="">
+    </div>
+    <ul id="right">
+        <li class="second">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul id="left">
+        <li id="pre">&lt;</li>
+        <li id="next">&gt;</li>
+    </ul>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var oMenu=document.getElementById('menu');
+    var oUl1=document.getElementById('right');
+    var aLi1=oUl1.getElementsByTagName('li');
+    var aImg=document.getElementsByTagName('img');
+    var opre=document.getElementById('pre');
+    var onext=document.getElementById('next');
+    var nowx=0;
+    var zindex=4;
+    for (var i=0;i<aImg.length;i++){
+        aImg[i].style.zIndex=aImg.length-i;
+    }
+    for (var i=0;i<aLi1.length;i++) {
+        aLi1[i].x = i;
+        aLi1[i].onclick = function () {
+            nowx=this.x;
+            changeImg(nowx);
+        };
+        aLi1[i].onselectstart=function () {
+            return false;
+        };
+    }
+
+    opre.onclick = function () {
+        nowx--;
+        if (nowx == -1) {
+            nowx = aLi1.length - 1;
+        }
+        changeImg(nowx);
+    };
+    onext.onclick = function () {
+        nowx++;
+        if (nowx == aLi1.length) {
+            nowx = 0;
+        }
+        changeImg(nowx);
+    };
+    function changeImg(nowx) {
+        for (var j = 0; j < aLi1.length; j++) {
+            aLi1[j].className = '';
+            // aImg[j].className = '';
+        }
+        aLi1[nowx].className = 'second';
+        // aImg[nowx].className = 'first';
+        aImg[nowx].style.zIndex=++zindex;
+        aImg[nowx].style.opacity=0;
+        animate(aImg[nowx],{opacity:100});
+    }
+    var fn=function () {
+        onext.onclick();
+    };
+    function play() {
+        timer=setInterval(fn,1000);
+
+    }
+    play();
+    oMenu.onmouseout=function () {
+        play();
+    };
+    oMenu.onmouseover=function () {
+        clearInterval(timer);
+    };
+
+</script>
+</body>
+</html>
