@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-动画</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+
+</div>
+<script>
+    var oMenu=document.getElementById('menu');
+    var timer=setInterval(function () {
+        var op=getComputedStyle(oMenu,false).opacity;
+        var wi=getComputedStyle(oMenu,false).width;
+        if (op<=0.1){
+            oMenu.style.opacity=0;
+        } else{
+            oMenu.style.opacity=op*0.9;
+        }
+        var w=parseInt(wi)+10;
+        if (w>500){
+            oMenu.style.width='500px';
+            clearInterval(timer);
+        } else{
+            oMenu.style.width=w+'px';
+        }
+        },50)
+</script>
+</body>
+</html>
