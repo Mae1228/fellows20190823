@@ -22,11 +22,14 @@
             opacity: .5;
             display: none;
             position: absolute;
-            left: 0;
-            top: 0;
+            /*left: 0;*/
+            /*top: 0;*/
         }
         #big{
             display: none;
+        }
+        #big img{
+            position: absolute;
         }
     </style>
 </head>
@@ -42,6 +45,7 @@
     var oSmall=document.getElementById('small');
     var oBig=document.getElementById('big');
     var oGun=document.getElementById('gun');
+    var oImg=document.getElementsByTagName('img')[1];
     oSmall.onmouseover=function () {
         oGun.style.display='block';
         oBig.style.display='block';
@@ -51,19 +55,23 @@
             var disy=e.clientY-oGun.offsetHeight/2;
             // console.log(disx);
             if (disx>oSmall.offsetWidth-oGun.offsetWidth){
-                disx>oSmall.offsetWidth-oGun.offsetWidth
+                disx=oSmall.offsetWidth-oGun.offsetWidth
             } else if (disx<0){
                 disx=0;
             }
             if (disy>oSmall.offsetHeight-oGun.offsetHeight){
-                disy>oSmall.offsetHeight-oGun.offsetHeight
+                disy=oSmall.offsetHeight-oGun.offsetHeight
             } else if (disy<0){
                 disy=0;
             }
+            //比例= disx/(oSmall.offsetWidth-oGun.offsetWidth)=?/(oImg.offsetWidth-oBig.offsetWidth)
+            var imgx=-disx/(oSmall.offsetWidth-oGun.offsetWidth)*(oImg.offsetWidth-oBig.offsetWidth);
+            var imgy=-disy/(oSmall.offsetHeight-oGun.offsetHeight)*(oImg.offsetHeight-oBig.offsetHeight);
             oGun.style.left=disx+'px';
             oGun.style.top=disy+'px';
+            oImg.style.left=imgx+'px';
+            oImg.style.top=imgy+'px';
         }
-
     };
     oSmall.onmouseout=function () {
         oGun.style.display='none';
