@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small,#big{
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        #gun{
+            width: 150px;
+            height: 150px;
+            background: #cccccc;
+            opacity: .5;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #big{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="small">
+    <img src="./1.jpg" alt="">
+    <div id="gun"></div>
+</div>
+<div id="big">
+    <img src="./2.jpg" alt="">
+</div>
+<script>
+    var oSmall=document.getElementById('small');
+    var oBig=document.getElementById('big');
+    var oGun=document.getElementById('gun');
+    oSmall.onmouseover=function () {
+        oGun.style.display='block';
+        oBig.style.display='block';
+        oSmall.onmousemove=function (e) {
+            e = e || window.event;
+            var disx=e.clientX-oGun.offsetWidth/2;
+            var disy=e.clientY-oGun.offsetHeight/2;
+            // console.log(disx);
+            if (disx>oSmall.offsetWidth-oGun.offsetWidth){
+                disx>oSmall.offsetWidth-oGun.offsetWidth
+            } else if (disx<0){
+                disx=0;
+            }
+            if (disy>oSmall.offsetHeight-oGun.offsetHeight){
+                disy>oSmall.offsetHeight-oGun.offsetHeight
+            } else if (disy<0){
+                disy=0;
+            }
+            oGun.style.left=disx+'px';
+            oGun.style.top=disy+'px';
+        }
+
+    };
+    oSmall.onmouseout=function () {
+        oGun.style.display='none';
+        oBig.style.display='none';
+    };
+</script>
+</body>
+</html>
