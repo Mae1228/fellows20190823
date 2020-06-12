@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-事件模型2</title>
+</head>
+<body>
+<div id="div1">
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+
+<button id="btn">anniu</button>
+<script>
+    var oUl=document.getElementById('ul1');
+    var aLi=document.getElementsByTagName('li');
+    var oBtn=document.getElementById('btn');
+    var oDiv=document.getElementById('div1');
+    oUl.onclick=function (e) {
+        console.log(e.target.innerHTML);//返回点击元素的值
+        console.log(e.currentTarget.innerHTML);//返回触发事件的值，即为this
+        console.log(this.innerHTML+'hhh');//返回触发事件的值，即为this
+        e.stopPropagation();
+    };
+
+    oDiv.onclick=function(){
+        console.log('kjjbbggg4444');
+    }
+
+    // for (var i=0;i<aLi.length;i++){
+    //     aLi[i].onclick=function () {
+    //         console.log(this.innerHTML);
+    //     }
+    // }
+
+    oBtn.onclick=function () {
+        var oli=document.createElement('li');
+        oli.innerHTML=Math.random()*10;
+        oUl.appendChild(oli);
+    }
+    
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-拖拽</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv=document.getElementById('div1');
+    oDiv.onmousedown=function (e) {
+        var divx=e.clientX-oDiv.offsetLeft;
+        var divy=e.clientY-oDiv.offsetTop;
+        document.onmousemove=function (e) {
+            var disx=e.clientX-divx;
+            var disy=e.clientY-divy;
+            if (disx>document.documentElement.offsetWidth-oDiv.offsetWidth){
+                disx=document.documentElement.offsetWidth-oDiv.offsetWidth;
+            } else if (disx<0){
+                disx=0;
+            }
+            if (disy>window.innerHeight-oDiv.offsetHeight){
+                disy=window.innerHeight-oDiv.offsetHeight;
+            } else if (disy<0){
+                disy=0;
+            }
+            oDiv.style.left=disx+'px';
+            oDiv.style.top=disy+'px';
+        }
+        oDiv.onmouseup=function () {
+            document.onmousemove=null;
+        }
+    }
+</script>
+</body>
+</html>

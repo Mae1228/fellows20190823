@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-折叠菜单2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            width: 200px;
+            margin: 100px auto;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            background: black;
+            color: #fff;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .u{
+            border: 1px solid #000000;
+            display: none;
+        }
+        .u li{
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            /*margin: 1px auto;*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul id="menu">
+        <li>
+            <a href="">第一</a>
+            <ul class="u">
+                <li>11</li>
+                <li>22</li>
+                <li>33</li>
+                <li>44</li>
+                <li>55</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">第二</a>
+            <ul class="u">
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    var aA=document.getElementsByTagName('a');
+    var oMenu=document.getElementById('menu');
+    var aUl=oMenu.getElementsByTagName('ul');
+    for (var i=0;i<aA.length;i++){
+        aA[i].flag=true;
+        aA[i].onclick=function () {
+            if (this.flag){
+                this.nextElementSibling.style.display='block';
+                // this.flag=false;
+            } else{
+                this.nextElementSibling.style.display='none';
+                // this.flag=true;
+            }
+            this.flag=!this.flag;
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

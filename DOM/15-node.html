@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-node</title>
+</head>
+<body>
+<div id="div2">222222</div>
+<div id="div1">
+    <p id="pp">ppppp</p>
+    divdivd1\
+    <div id="div4">divvvvvvvv</div>
+</div>
+<div id="div3">
+
+</div>
+<script>
+
+    var odiv1=document.getElementById('div1');
+    var odiv2=document.getElementById('div2');
+    var odiv3=document.getElementById('div3');
+    var odiv4=document.getElementById('div4');
+    var op=document.getElementById('pp');
+    console.log(odiv1.nodeName);
+    console.log(odiv1.firstElementChild);
+    console.log(odiv1.lastElementChild);
+    console.log(odiv1.childNodes);//回车也是文档元素
+    console.log(odiv1.childElementCount);
+    console.log(odiv1.previousElementSibling);//上一个兄弟节点
+    console.log(odiv2.nextElementSibling);
+    console.log(odiv3.hasChildNodes());//判断是否有孩子节点，回车是文档节点\
+    // console.log(odiv1.appendChild(odiv2));//原来的odiv2不在，odiv2移到odiv1最后面
+    console.log(odiv1.appendChild(odiv2.cloneNode()));//原来的odiv2还在，odiv2复制到odiv1最后面
+    var o=odiv1.removeChild(op);//返回删除内容
+    console.log(o);
+
+    var p=document.createElement('p');
+    p.innerHTML='sssssppp';
+    var s=document.createTextNode('1234');
+    p.appendChild(s);
+    odiv1.insertBefore(p,odiv4);
+
+    // 添加孩子到第一位
+    odiv2.insertBefore(p,odiv2.firstChild);
+    console.log(odiv2);
+
+    // 封装函数：让firstChild和firstElementChild兼容
+    console.log(First(odiv1));
+    function First(elem) {
+        if (elem.firstChild.nodeType!=1){
+            return Next(elem.firstChild);
+        }
+        return elem.firstChild;
+        // return elem.firstChild.nodeType!=1?Next(elem.firstChild):elem.firstChild;
+    }
+    function Next(elem) {
+        do{
+            elem=elem.nextSibling;
+        } while (elem.nodeType!=1 && elem!=null);
+        return elem;
+    }
+
+</script>
+</body>
+</html>
